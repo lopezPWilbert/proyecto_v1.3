@@ -4,7 +4,7 @@ Definition of views.
 
 from django.shortcuts import render
 
-from django.views.generic import FormView,CreateView,TemplateView
+from django.views.generic import FormView,CreateView,TemplateView, ListView
 from django.core.urlresolvers import reverse_lazy
 from .models import *
 from .forms import *
@@ -27,9 +27,16 @@ def Denuncia(request):
             video = form.cleaned_data.get("video")
             form.save()
     return render(request, 'app/denuncia.html',{'form':form})
-	
 
-
+'''
 class Mapa(TemplateView):
 	template_name='app/mapa.html'
+'''
+class Mapa(ListView):
+    template_name='app/mapa.html'
+    model=Denuncia_m
+
+class contador(ListView):
+    template_name='app/contador.html'
+    model=Denuncia_m
 

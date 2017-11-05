@@ -4,7 +4,8 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>ProyectoDjango1</Name>
     <RootNamespace>ProyectoDjango1</RootNamespace>
-    <InterpreterId>MSBuild|venv|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserPort>8000</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,6 +57,10 @@
     <Folder Include="ProyectoDjango1\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\base.html" />
+    <Content Include="app\templates\app\contador.html" />
+    <Content Include="app\templates\app\denuncia.html" />
+    <Content Include="app\templates\app\mapa.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -80,12 +85,8 @@
     <Content Include="app\static\app\scripts\respond.js" />
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
-    <Content Include="app\templates\app\about.html" />
-    <Content Include="app\templates\app\contact.html" />
     <Content Include="app\templates\app\index.html" />
-    <Content Include="app\templates\app\layout.html" />
-    <Content Include="app\templates\app\login.html" />
-    <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="Versiones.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
@@ -93,10 +94,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="venv\">
-      <Id>venv</Id>
+    <Interpreter Include="..\..\env\">
+      <Id>env</Id>
       <Version>2.7</Version>
-      <Description>venv (Python 2.7 (32-bit))</Description>
+      <Description>env (Python 2.7 (32-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>

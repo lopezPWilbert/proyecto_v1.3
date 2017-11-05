@@ -1,0 +1,21 @@
+﻿
+2017-11-04T20:00:14: Start analysis
+2017-11-04T20:00:16: [ERROR] Analysis failed
+System.InvalidOperationException: Cannot obtain search paths ---> System.InvalidOperationException: Cannot obtain list of paths
+El sistema no puede encontrar el archivo especificado
+   en Microsoft.PythonTools.Interpreter.PythonTypeDatabase.<GetUncachedDatabaseSearchPathsAsync>d__58.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Prepare>d__46.MoveNext()
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Prepare>d__46.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Microsoft.PythonTools.Analysis.PyLibAnalyzer.<RunWorker>d__34.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Run>d__33.MoveNext()

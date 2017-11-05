@@ -22,6 +22,7 @@ from allauth.account.views import *
 
 
 urlpatterns = [
+    url(r'contador/', app.views.contador.as_view(), name='contador'),
     # Examples:
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^$',RedirectView.as_view(url='accounts/login/')),
