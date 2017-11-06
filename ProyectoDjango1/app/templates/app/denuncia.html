@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col">
 
-                    <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data" name="denuncia_form">
                         {% csrf_token %} 
                         <!--{{form.as_p}}-->
 
@@ -24,7 +24,7 @@
                         <p><label for="id_descripcion">Descripcion:</label> <textarea name="descripcion" id="id_descripcion" rows="10" cols="40" required=""></textarea></p>
                         <input type="hidden" name="latitud" required="" id="lat">
                         <input type="hidden" name="longitud" required="" id="lng">
-                        <p><label for="id_img">Imagen:</label> <input type="file" name="img" required="" id="id_img"></p>
+                        <p><label for="id_img">Imagen:</label> <input type="file" name="img" required="" id="id_img" onchange="return img_valid()"></p>
                         <p><label for="id_video">Video:</label> <input type="file" name="video" id="id_video"></p>
 
                         <br>
@@ -129,8 +129,32 @@
         y = marcador_coords.lat();
         document.getElementById("lat").value = y;
         document.getElementById("lng").value = x;
+
+        descrp_vali();
     }
     obtenerCoordenadas();
+
+    function img_valid() {
+        var archivo = document.getElementById('id_img');
+        var archivo_ruta = archivo.value;
+        var extensiones = /(.jpg|.jpeg|.png|.gif)$/i;
+        if (!extensiones.exec(archivo_ruta)) {
+            alert('Debes de proporcionar un archivo de imagen tipo .jpg|.jpeg|.png|.gif');
+            archivo.value = '';
+            return false
+        }
+    }
+    function descrp_vali() {
+        var texto = document.getElementById('id_descripcion');
+        var txt = texto.value;
+        if (txt.length < 15) {
+            alert('Debe proporcionar al menos 15 caracteres en la descripcion.');
+            txt.value = '';
+            return false
+        }
+        var txt2 = txt.replace("\n", ". ");
+        document.getElementById('id_descripcion').value = txt2;
+    }
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1-teWu2BHQOmSdWhPxGi6K8eA2uCfUAg&callback=initMap">
